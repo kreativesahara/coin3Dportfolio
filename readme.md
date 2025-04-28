@@ -1,127 +1,137 @@
-# 3D Portfolio Website
+# 🏩️ 3D Evolution of Currency – Interactive Coin History Viewer
 
-An interactive 3D portfolio website built with Next.js and WebGL, designed to showcase 3D models and projects in a visually engaging manner.
+An interactive 3D web application showcasing the **historical evolution of coins**, from ancient civilizations to modern digital currencies. Each coin is visualized in 3D, complete with historical data, textures, and animations. Built with **Next.js**, **React Three Fiber**, and styled using **ShadCN UI + TailwindCSS**.
 
-## Table of Contents
+---
 
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
+## 🔧 Tech Stack
 
-## Project Overview
+| Feature                | Technology                         |
+|------------------------|-------------------------------------|
+| Framework              | Next.js (App Router)               |
+| 3D Rendering           | React Three Fiber (Three.js)       |
+| UI Components          | ShadCN UI                          |
+| Animations             | Framer Motion                      |
+| 3D Model Format        | GLB/GLTF (from Blender)            |
+| Image Delivery         | Cloudinary                         |
+| Web3 Integration       | Wagmi + RainbowKit (optional)      |
+| Styling                | Tailwind CSS                       |
+| Hosting                | Vercel                             |
 
-This project aims to develop a responsive and interactive 3D portfolio website that allows users to:
+---
 
-- Browse and interact with 3D models.
-- View detailed information about each project.
-- Contact the portfolio owner through a contact form.
-
-## Features
-
-- **Interactive 3D Models**: Users can rotate, zoom, and explore 3D models.
-- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
-- **Project Showcase**: Detailed pages for each project with descriptions and media.
-- **Contact Form**: Allows visitors to get in touch directly from the website.
-
-## Tech Stack
-
-- **Frontend**:
-  - [Next.js](https://nextjs.org/): React framework for server-side rendering and static site generation.
-  - [Three.js](https://threejs.org/): JavaScript library for creating 3D graphics.
-  - [Tailwind CSS](https://tailwindcss.com/): Utility-first CSS framework for styling.
-  - [shadcn/ui](https://ui.shadcn.com/): Reusable, accessible, and beautifully designed UI components.
-- **3D Model Handling**:
-  - [react-three-fiber](https://github.com/pmndrs/react-three-fiber): React renderer for Three.js.
-  - [drei](https://github.com/pmndrs/drei): Helper library for react-three-fiber.
-- **Form Handling**:
-  - [React Hook Form](https://react-hook-form.com/): For managing form state and validation.
-- **Deployment**:
-  - [Vercel](https://vercel.com/): Platform for frontend frameworks and static sites.
-
-## Project Structure
+## 📦 Folder Structure
 
 ```
+/3d-coin-history/
+│
 ├── public/
-│   └── models/           # 3D model files (e.g., .glb, .gltf)
-├── src/
-│   ├── components/       # Reusable UI components
-│   ├── pages/            # Next.js pages
-│   ├── styles/           # Global and component-specific styles
-│   └── utils/            # Utility functions
-├── .gitignore
-├── README.md
-├── next.config.js
-├── package.json
-└── tailwind.config.js
+│   └── models/           # Coin GLTF/GLB models
+│   └── textures/         # Coin textures
+│
+├── app/                  # Next.js App Router pages
+│   └── page.tsx
+│
+├── components/
+│   └── CoinViewer.tsx    # React Three Fiber 3D viewer
+│   └── CoinInfo.tsx      # Coin data overlay
+│   └── TimelineSlider.tsx
+│
+├── lib/
+│   └── utils.ts          # Utility functions
+│
+├── styles/
+│   └── globals.css
+│
+├── ui/                   # ShadCN UI components
+│   └── button.tsx
+│   └── card.tsx
+│
+└── package.json
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+## 🚀 Key Features
 
-- Node.js (v14 or later)
-- npm or yarn
+### 🎨 Interactive 3D Coin Viewer
+- View coins in full 360° using mouse or touch gestures.
+- Realistic PBR materials (metal, roughness, ambient occlusion).
+- Coin models exported from **Blender** → `.glb` format.
 
-### Installation
+### 📜 Historical Timeline
+- Timeline slider shows coins by era:
+  - Ancient Greece
+  - Roman Empire
+  - Islamic Caliphates
+  - Colonial Period
+  - Modern Coins
+  - Web3 Tokens (BTC/ETH)
+- Each coin displays:
+  - Country
+  - Year
+  - Description & Historical Context
 
-1. **Clone the repository**:
+### 💅 Styled with ShadCN
+- Responsive, accessible components:
+  - `Card` for coin info
+  - `Slider` for timeline navigation
+  - `Dialog` for in-depth popups
+  - `Button` for switching eras
+- All powered by Radix UI under the hood
 
-   ```bash
-   git clone https://github.com/your-username/3d-portfolio.git
-   cd 3d-portfolio
-   ```
+### 📱 Mobile Ready
+- Fully responsive layout
+- Gesture-enabled viewer (rotate/zoom coins)
 
-2. **Install dependencies**:
+---
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+## 🌐 Future-Proofing with Web3
 
-3. **Run the development server**:
+> **Goal:** Expand from *history of coins* into *the evolution of value* — with **Web3** coins as the next frontier.
 
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+### Web3 Integration Ideas:
+- Connect wallet with **RainbowKit + Wagmi**
+- Let users:
+  - View their token holdings (as 3D coins)
+  - Mint commemorative NFTs of historical coins
+  - Unlock hidden coins via smart contract interactions
 
-   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Potential Stack Additions:
+- Smart Contracts → Solidity + Hardhat
+- On-chain metadata → IPFS / Filecoin
+- NFT Marketplace Integration → OpenSea SDK
 
-## Contribution Guidelines
+---
 
-We welcome contributions! Here's how you can help:
+## 🧐 MVP Milestone Plan
 
-1. **Fork the repository**.
-2. **Create a new branch**:
+1. ✅ Load GLTF coin models in React Three Fiber.
+2. ✅ Add ShadCN components for UI.
+3. ✅ Animate timeline scroll with Framer Motion.
+4. ✅ Display coin info overlay.
+5. ✅ Connect historical data dynamically.
+6. 🔜 Optional Web3 wallet connection + NFT coin drops.
 
-   ```bash
-   git checkout -b feature/YourFeatureName
-   ```
+---
 
-3. **Make your changes**.
-4. **Commit your changes**:
+## 🧠 Optional Features
 
-   ```bash
-   git commit -m "Add YourFeatureName"
-   ```
+- 🧠 AI narration for each coin using text-to-speech
+- 🗼 Interactive map of coin origins
+- 📸 Share 3D coin snapshots to social media
+- 📆 Admin dashboard to upload new coins
 
-5. **Push to the branch**:
+---
 
-   ```bash
-   git push origin feature/YourFeatureName
-   ```
+## 👨‍🎨 Author
 
-6. **Open a Pull Request**.
+**KIOGORA MWONGERA**  
+*Full-Stack Developer | UI/UX Designer | 3D Dreamer*
 
-Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+> Crafting clean code, crispy visuals, and stories that live in the browser.  
+> Find me on GitHub, LinkedIn, or wherever WebGL meets imagination 🌍
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+> “A coin holds more than value — it holds time, culture, and craft. This project revives that legacy in the language of the web.”  
+> – *LeutBalmer*
 
